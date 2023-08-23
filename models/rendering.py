@@ -7,7 +7,7 @@ from kornia.geometry.conversions import angle_axis_to_rotation_matrix, quaternio
 from kornia.geometry.conversions import quaternion_to_rotation_matrix, rotation_matrix_to_angle_axis, QuaternionCoeffOrder
 from kornia.morphology import erosion, dilation
 from kornia.filters import GaussianBlur2d
-from utils import *
+from my_utils import *
 import math
 
 def deringing(coeffs, window):

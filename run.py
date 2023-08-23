@@ -2,7 +2,7 @@ import argparse
 import os
 import torch
 import time
-from utils import *
+from my_utils import *
 from tracking6d import *
 from models.rendering import generate_novel_views
 from segmentations import *

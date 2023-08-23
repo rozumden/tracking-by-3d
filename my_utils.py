@@ -15,6 +15,12 @@ import yaml
 import torch
 from scipy.ndimage import center_of_mass
 from models.encoder import qnorm, qdifference
+from argparse import Namespace
+
+
+def RAFTConfig(input_model):
+    args = Namespace(alternate_corr=False, mixed_precision=False, path=None, small=False, model=input_model)
+    return args
 
 def compute_angs(quaternion):
 	angs = []

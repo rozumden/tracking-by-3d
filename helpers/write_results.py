@@ -5,7 +5,7 @@ import cv2
 from helpers.torch_helpers import write_renders
 from models.kaolin_wrapper import write_obj_mesh
 from torchvision.utils import save_image
-from utils import write_video, segment2bbox
+from my_utils import write_video, segment2bbox
 import torchvision.ops.boxes as bops
 
 class WriteResults():

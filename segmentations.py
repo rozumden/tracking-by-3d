@@ -3,7 +3,7 @@ import numpy
 from torchvision import transforms
 import cv2 as cv
 from scipy.ndimage import uniform_filter
-from utils import *
+from my_utils import *
 from skimage.measure import label, regionprops
 from kornia.filters import gaussian_blur2d, spatial_gradient
 import glob

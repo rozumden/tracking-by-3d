@@ -2,7 +2,7 @@ import os
 import torch
 import numpy as np
 
-from utils import *
+from my_utils import *
 from models.initial_mesh import generate_initial_mesh, generate_face_features
 from models.kaolin_wrapper import load_obj, write_obj_mesh
 
@@ -16,11 +16,13 @@ from scipy.ndimage.filters import gaussian_filter
 import copy
 from segmentations import *
 import time
-from S2DNet.s2dnet import S2DNet
+
+sys.path.append('S2DNet')
+from s2dnet import S2DNet
 
 sys.path.append('RAFT/core')
-from RAFT.core.raft import RAFT, RAFTConfig, flowviz
-from raft_utils.utils import InputPadder
+from RAFT.core.raft import RAFT
+from utils.utils import InputPadder
 
 class Tracking6D():
     def __init__(self, config, device, write_folder, file0, bbox0, init_mask=None):
@@ -124,13 +126,6 @@ class Tracking6D():
                 self.flow[...,-1] = combine_flows(self.flow[...,-1], flow_cur)
                 nmofs, rads = compute_norm_mean_of_array(self.flow, self.segments)
                 self.flow = np.concatenate( (self.flow, np.zeros(flow_cur.shape, np.float32)[...,None]), 3)   
-
-                points = generate_points(image.shape)
-                new_points = apply_of(points, flow_cur)
-                img_draw = draw_points(image[:,-1], new_points)
-                img_prev_draw = draw_points(self.images[:,-1], points)
-                img_flo, flo = flowviz(img_prev_draw, flow_up, img_draw)
-                imwrite(img_flo, os.path.join(self.write_folder,'flow.png'))
 
             self.images = torch.cat( (self.images, image), 1)     
             self.segments = torch.cat( (self.segments, segment), 1)        
