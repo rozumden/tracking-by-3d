@@ -1,0 +1,49 @@
+# MAIN SETTINGS
+iterations: 500
+rgb_iters: 200
+learning_rate: 0.1
+image_downsample: 1.0
+max_width: 5000 #480
+tracker_type: ostrack
+grabcut: False
+project_coin: False
+features: deep
+stop_value: 0.05
+tran_init: 0.0
+rot_init: [0,1.57079637051,0]
+init_shape: False
+optical_flow: True
+
+max_keyframes: 8
+inc_step: 5
+accumulate: False
+keyframes: True
+motion_only_last: False
+
+mesh_size: 11
+camera_distance: 5
+mesh_normalize: False
+texture_size: 300 # 0 for none
+sigmainv: 7000
+factor: 1
+mask_iou_th: 0
+
+# LOSS FUNCTION
+loss_laplacian_weight: 1000.0
+loss_tv_weight: 0.001
+loss_iou_weight: 1.0
+loss_dist_weight: 0.1
+loss_rgb_weight: 1.0
+loss_qt_weight: 1.0
+
+erode_renderer_mask: 3
+rotation_divide: 8
+
+shapes:
+  - sphere
+predict_vertices: True
+
+write_results: True
+verbose: True
+
+write_intermediate: True
