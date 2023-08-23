@@ -4,3 +4,9 @@
 [submodule "AlphaRefine"]
 	path = AlphaRefine
 	url = git@github.com:MasterBin-IIAU/AlphaRefine.git
+[submodule "OSTrack"]
+	path = OSTrack
+	url = git@github.com:botaoye/OSTrack.git
+[submodule "S2DNet-Minimal"]
+	path = S2DNet-Minimal
+	url = git@github.com:germain-hug/S2DNet-Minimal.git
