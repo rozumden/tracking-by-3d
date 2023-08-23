@@ -1,3 +1,6 @@
 [submodule "RAFT"]
 	path = RAFT
 	url = git@github.com:princeton-vl/RAFT.git
+[submodule "AlphaRefine"]
+	path = AlphaRefine
+	url = git@github.com:MasterBin-IIAU/AlphaRefine.git
