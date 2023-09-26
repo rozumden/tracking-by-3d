@@ -1,3 +1,5 @@
+# TODO: replace with your folders and stored datasets
+
 FOLDER=/cluster/scratch/denysr/dataset/
 WEIGHTS=/cluster/scratch/denysr/tmp/
 USERNAME=rozumden
